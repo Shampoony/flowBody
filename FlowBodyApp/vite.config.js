@@ -14,5 +14,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/имя-вашего-репозитория/', // Замените на имя вашего репозитория
+  base: '/flowBody/', // Замените на имя вашего репозитория
 })
