@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "tailwindcss": "^3.4.17"
-  },
-  "dependencies": {
-    "vue-router": "^4.5.0"
-  }
-}
