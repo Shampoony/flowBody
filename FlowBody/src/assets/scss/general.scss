@@ -7,7 +7,12 @@
 
 
 .info  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
     margin-bottom: 42px;
+    max-width: 257px;
 }
 
 .title {
@@ -20,4 +25,15 @@
     font-size: 12px;
     color: rgba($color: #fff, $alpha: .8);
     line-height: 14.52px;
+}
+
+.error {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
 }
