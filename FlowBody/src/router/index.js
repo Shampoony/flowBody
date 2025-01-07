@@ -1,4 +1,3 @@
-const VMain = () => import('@/components/mainPage/vMain.vue')
 
 const vRate = () => import('@/components/ratePage/v-rate.vue')
 
@@ -7,8 +6,6 @@ const VRegisterPas = () => import('@/components/user/registrationPage/v-register
 const VRegisterInfo = () => import('@/components/user/registrationPage/v-register-info.vue')
 
 const vLogin = ()=>  import('@/components/user/loginPage/v-login.vue')
-
-const vResetPas = ()=> import('@/components/user/resetPassword/v-reset-pas.vue')
 
 import { createRouter, createWebHistory } from 'vue-router'
 const userRoutes = [
