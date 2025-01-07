@@ -5,6 +5,7 @@
               <div class="v-rate__info info">
                   <h1 class="v-rate__title title">Тарифы</h1>
                   <p class="v-rate__subtitle subtitle">Выберите свой тариф</p>
+                  <p class="v-rate__subtitle subtitle">Ваш телеграм id - {{ tgId }}</p>
                   <router-link :to="{name: 'registration-step-2'}">Ссылка на второй шаг</router-link>
               </div>
               <div class="v-rate__content">
@@ -50,7 +51,33 @@
     </div>
   </template>
   
-  <script setup>
-  import vFooter from '@/components/generalComponents/v-footer.vue'
-  </script>
+<script setup>
+import vFooter from '@/components/generalComponents/v-footer.vue'
   
+import { ref, onMounted } from 'vue';
+
+// Используем ref для хранения значений
+const tgId = ref(null);
+const userData = ref(null);
+
+// Функция для получения Telegram ID и данных пользователя
+const getTelegramId = () => {
+  // Проверяем, доступен ли Telegram WebApp API
+  if (window.Telegram && window.Telegram.WebApp) {
+    const initData = window.Telegram.WebApp.initDataUnsafe; // Данные пользователя
+    if (initData && initData.user) {
+      tgId.value = initData.user.id; // Сохраняем Telegram ID
+      userData.value = initData.user; // Сохраняем другие данные пользователя (например, имя)
+    } else {
+      console.error("Не удалось получить данные пользователя.");
+    }
+  } else {
+    console.error("Telegram WebApp API недоступен.");
+  }
+};
+
+// Вызов функции при монтировании компонента
+onMounted(() => {
+  getTelegramId(); // Получаем Telegram ID, когда компонент монтируется
+});
+</script>

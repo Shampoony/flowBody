@@ -42,7 +42,6 @@
                   <div class="v-user__button" @click="saveData">
                     Войти
                   </div>
-                  <router-link class="v-user__link" :to="{name:'reset-password'}">Забыли пароль?</router-link>
               </template>
             </v-user>
         </div>

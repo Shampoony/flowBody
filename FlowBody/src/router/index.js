@@ -32,11 +32,7 @@ const userRoutes = [
         name: 'login',
         component: vLogin
     },
-    {
-        path: 'reset-password',
-        name: 'reset-password',
-        component: vResetPas
-    },
+   
 ]
 
 const routes = [
