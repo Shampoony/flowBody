@@ -5,7 +5,7 @@
               <div class="v-rate__info info">
                   <h1 class="v-rate__title title">Тарифы</h1>
                   <p class="v-rate__subtitle subtitle">Выберите свой тариф</p>
-                  <p class="v-rate__subtitle subtitle">Ваш телеграм id - {{ tgId }}</p>
+                  <p class="v-rate__subtitle subtitle">Ваш телеграм id - {{ tgId }}. (Сработало?)</p>
                   <router-link :to="{name: 'registration-step-2'}">Ссылка на второй шаг</router-link>
               </div>
               <div class="v-rate__content">
