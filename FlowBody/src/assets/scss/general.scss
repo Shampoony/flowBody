@@ -28,9 +28,27 @@
 }
 
 .error {
-    text-align: center;
+    color: var(--red);
+    font-size: 14px;
     margin: 0;
     padding: 0;
+
+    margin-top: 8px;
+
+    position: absolute;
+   /*  text-align: center; */
+}
+
+.error-input {
+    position: relative;
+    background-color: rgba($color: #FF0000, $alpha: .09);
+
+    border: .5px solid var(--red) !important;
+    color: #fff !important;
+
+    &::placeholder {
+        color: #fff !important;
+    }
 }
 
 :active, :hover, :focus {

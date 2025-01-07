@@ -145,16 +145,21 @@ footer {
     }
 }
 
-.v-register {
+.v-user {
     &__content {
         padding-left: 10px;
     }
     &__form {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-
         margin-bottom: 18px;
+    }
+
+    &__link {
+        display: block;
+
+        text-align: center;
+        text-decoration: underline;
+
+        margin-top: 15px;
     }
 
     &__form-block {
@@ -163,12 +168,17 @@ footer {
 
         gap: 10px;
     }
+    &__form-block + &__form-block {
+        margin-top: 30px;
+    }
     &__form-input {
-        max-width: 325px;
+        max-width: 100%;
         height: 52px;
         border-radius: 20px;
         padding: 18px;
         color: var(--black);
+
+        border: 1px solid var(--black);
     }
 
     &__form-input::placeholder {
@@ -198,7 +208,7 @@ footer {
 
     &__button {
         display: block;
-        width: 325px;
+        width: 100%;
         
         background-color: var(--red);
         color: var(--white);
@@ -208,4 +218,5 @@ footer {
         padding: 19px 0;
         margin: 20px auto 0;
     }
+
 }

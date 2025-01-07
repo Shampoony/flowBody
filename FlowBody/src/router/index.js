@@ -1,15 +1,20 @@
 const VMain = () => import('@/components/mainPage/vMain.vue')
 
 const vRate = () => import('@/components/ratePage/v-rate.vue')
+
 const vRegister = () => import('@/components/user/registrationPage/v-register-num.vue') 
 const VRegisterPas = () => import('@/components/user/registrationPage/v-register-pas.vue')
 const VRegisterInfo = () => import('@/components/user/registrationPage/v-register-info.vue')
+
+const vLogin = ()=>  import('@/components/user/loginPage/v-login.vue')
+
+const vResetPas = ()=> import('@/components/user/resetPassword/v-reset-pas.vue')
 
 import { createRouter, createWebHistory } from 'vue-router'
 const userRoutes = [
     {
         path: 'registration',
-        name: 'registration',
+        name: 'registration-step-1',
         component: vRegister
     },
     {
@@ -22,6 +27,16 @@ const userRoutes = [
         name: 'registration-step-3',
         component: VRegisterInfo
     },
+    {
+        path: 'login',
+        name: 'login',
+        component: vLogin
+    },
+    {
+        path: 'reset-password',
+        name: 'reset-password',
+        component: vResetPas
+    },
 ]
 
 const routes = [
@@ -31,7 +46,7 @@ const routes = [
         component: vRate
     },
     {
-        path: '/users',
+        path: '/users/',
         children: userRoutes
     },
 
