@@ -1,10 +1,14 @@
 <template>
     <div class="v-user-header">
         <div class="v-user-header__title" :class="{active : type === 'login'}">
+            <router-link :to="{name: 'login'}">
             Авторизация 
+        </router-link>
         </div>
         <div class="v-user-header__title" :class="{active : type === 'register'}">
-            Регистрация 
+            <router-link :to="{name: 'registration-step-1'}">
+                Регистрация
+            </router-link>
         </div>
     </div>
 </template>

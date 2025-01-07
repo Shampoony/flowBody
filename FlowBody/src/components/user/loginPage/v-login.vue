@@ -39,7 +39,7 @@
                 </div>
               </template>
               <template v-slot:buttons>
-                  <div class="v-user__button">
+                  <div class="v-user__button" @click="saveData">
                     Войти
                   </div>
                   <router-link class="v-user__link" :to="{name:'reset-password'}">Забыли пароль?</router-link>
@@ -59,10 +59,11 @@ const store = userLoginStore();
 
 const number = ref('');
 const password = ref('');
-const isDataCorrect = ref(false)
+const isDataCorrect = ref(true)
 
 const saveData = () => {
   if (!validateNumber(number.value)) {
+    console.log('В условии')
     isDataCorrect.value = false;
     return;
   }
