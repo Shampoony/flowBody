@@ -5,7 +5,7 @@
               <div class="v-rate__info info">
                   <h1 class="v-rate__title title">Тарифы</h1>
                   <p class="v-rate__subtitle subtitle">Выберите свой тариф</p>
-                  <p class="v-rate__subtitle subtitle">Ваш телеграм id - {{ tgId }}. (Сработало?)</p>
+                  <p class="v-rate__subtitle subtitle">тут долно быть что-то ---- {{ data }}, {{ initDataRaw }} </p>
                   <router-link :to="{name: 'registration-step-2'}">Ссылка на второй шаг</router-link>
               </div>
               <div class="v-rate__content">
@@ -51,33 +51,50 @@
     </div>
   </template>
   
-<script setup>
+<script>
 import vFooter from '@/components/generalComponents/v-footer.vue'
-  
-import { ref, onMounted } from 'vue';
 
-// Используем ref для хранения значений
-const tgId = ref(null);
-const userData = ref(null);
+import { retrieveLaunchParams } from '@telegram-apps/sdk';
 
-// Функция для получения Telegram ID и данных пользователя
-const getTelegramId = () => {
-  // Проверяем, доступен ли Telegram WebApp API
-  if (window.Telegram && window.Telegram.WebApp) {
-    const initData = window.Telegram.WebApp.initDataUnsafe; // Данные пользователя
-    if (initData && initData.user) {
-      tgId.value = initData.user.id; // Сохраняем Telegram ID
-      userData.value = initData.user; // Сохраняем другие данные пользователя (например, имя)
-    } else {
-      console.error("Не удалось получить данные пользователя.");
-    }
-  } else {
-    console.error("Telegram WebApp API недоступен.");
-  }
+export default {
+  data() {
+    return {
+      initDataRaw: '',
+      data: ''
+    };
+  },
+  components: {vFooter},
+  methods: {
+    async sendInitDataToServer() {
+      // Получаем raw данные initData
+      const { initDataRaw } = retrieveLaunchParams();
+      
+      try {
+        const response = await fetch('https://your-fastapi-url.com/api', {
+          method: 'POST',
+          headers: {
+            'Authorization': `tma ${initDataRaw}`,
+          },
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          console.log("User authorized", data);
+           this.data = data;
+          // Сохраняем токен или выполняем дополнительные действия
+        } else {
+          console.error("Access denied");
+          this.data = 'Ошибочка'
+        }
+      } catch (error) {
+        console.error("Error while sending initData", error);
+         this.data = 'Ошибочка 2'
+      }
+    },
+  },
+  mounted() {
+    this.sendInitDataToServer();
+  },
 };
 
-// Вызов функции при монтировании компонента
-onMounted(() => {
-  getTelegramId(); // Получаем Telegram ID, когда компонент монтируется
-});
 </script>
