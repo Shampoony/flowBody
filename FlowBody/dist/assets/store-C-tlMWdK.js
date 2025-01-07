@@ -1,1 +1,0 @@
-import{j as e}from"./index-Duc3sDGQ.js";const s=e("register",{state:()=>({registrationForm:{number:"",OTP:"",password:"",gender:"",city:""}}),actions:{updateFormField(r,t){this.registrationForm.hasOwnProperty(r)&&(this.registrationForm[r]=t),console.log(this.registrationForm)}}});export{s as u};
