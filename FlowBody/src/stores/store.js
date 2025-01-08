@@ -3,9 +3,6 @@ import { defineStore } from 'pinia';
 export const useRegisterStore = defineStore('register', {
   state: () => ({
     registrationForm: {
-      number: '',
-      OTP: '',
-      password: '',
       gender: '',
       city: '',
     },

@@ -61,7 +61,6 @@ const saveData = () => {
 if(password1.value === password2.value) {
     store.updateFormField('password', password1.value);
 } else {
-    console.log('В условии')
     passwordError.value = true
 }
 };

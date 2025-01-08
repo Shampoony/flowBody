@@ -20,8 +20,8 @@
                   type="text"
                   class="v-user__form-input"
                   id="password2"
-                  v-model="city"
-                  placeholder="Введите город"
+                  v-model="country"
+                  placeholder="Введите вашу страну"
                 />
               </div>
             </form>
@@ -29,13 +29,12 @@
         </template>
   
         <template v-slot:buttons>
-          <router-link
-            :to="{ name: 'registration-step-2' }"
+          <div
             class="v-user__button"
             @click="saveData"
           >
             Продолжить
-          </router-link>
+          </div>
         </template>
       </v-user>
     </div>
@@ -46,16 +45,24 @@
   
   import { ref } from 'vue';
   import { useRegisterStore } from '@/stores/store';
+  import { getToken, updateUser } from '@/api/requests';
   
   const store = useRegisterStore(); // Получаем доступ к Pinia store
   
   const gender = ref('');
-  const city  = ref('');
+  const country  = ref('');
+  const tg = window?.Telegram?.WebApp;
   
   // Сохранение данных в store при продолжении
-  const saveData = () => {
-    store.updateFormField('gender', gender.value);
-    store.updateFormField('city', city.value);
+  const saveData = async  () => {
+    if (tg && tg.initDataUnsafe.user) {
+       await getToken(tg.initDataUnsafe.user.id)
+       await updateUser(JSON.stringify({'gender':gender.value, 'country':country.value}))
+
+    }
+   
+    /* store.updateFormField('gender', gender.value);
+    store.updateFormField('city', city.value); */
   };
   </script>
   

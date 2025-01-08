@@ -1,5 +1,5 @@
 <template>
-   <footer class="v-footer">
+   <footer class="v-footer" v-if="isAuth">
     <div class="v-footer__container container">
       <ul class="v-footer__list">
          <li class="v-footer__list-item footer-link">
@@ -47,4 +47,5 @@
    </footer>
 </template>
 <script setup>
+const isAuth = localStorage.getItem('user')
 </script>

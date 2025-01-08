@@ -588,66 +588,10 @@ video {
   }
 }
 
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mb-32 {
   margin-bottom: 8rem;
 }
 
-.mb-28 {
-  margin-bottom: 7rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
-}
-
-.mb-64 {
-  margin-bottom: 16rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.outline {
-  outline-style: solid;
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.mb-4 {
+  margin-bottom: 1rem;
 }
