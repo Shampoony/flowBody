@@ -10,6 +10,7 @@ export async  function getToken(tg_id) {
         // Получаем токен и сохраняем его
     /*     localStorage.setItem('user', response) */
         const accessToken = await response.json()
+        console.log(accessToken)
        
         /* const { accessToken } = response.data;
         localStorage.setItem('accessToken', accessToken); */
