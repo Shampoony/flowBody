@@ -24,7 +24,7 @@ export async  function getToken(tg_id) {
 export async  function updateUser(tg_id, requestData) {
     try {
         // Отправляем данные на сервер
-        const response = await axios.post(`${apiUrl}/api/user/check_user/${tg_id}`, requestData);
+        const response = await axios.put(`${apiUrl}/api/user/check_user/${tg_id}`, requestData);
     
         console.log(response)
       } catch (error) {
