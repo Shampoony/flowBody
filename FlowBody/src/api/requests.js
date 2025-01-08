@@ -5,10 +5,10 @@ export async  function getToken(tg_id) {
     console.log(tg_id)
     try {
         // Отправляем данные на сервер
-        const response = await axios.post(`${apiUrl}/api/user/check_user/${tg_id}`);
+        const response = await axios.get(`${apiUrl}/api/user/check_user/${tg_id}`);
     
         // Получаем токен и сохраняем его
-      /*   localStorage.setItem('user', response.data) */
+    /*     localStorage.setItem('user', response) */
         console.log(response)
        
         /* const { accessToken } = response.data;
