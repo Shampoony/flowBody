@@ -1,3 +1,4 @@
+import axios from 'axios';
 const apiUrl = 'https://b6c5-94-158-60-244.ngrok-free.app';
 
 export async  function getToken(tg_id) {
