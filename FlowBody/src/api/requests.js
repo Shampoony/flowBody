@@ -1,6 +1,7 @@
 const apiUrl = 'https://b6c5-94-158-60-244.ngrok-free.app';
 
 export async  function getToken(tg_id) {
+    console.log(tg_id)
     try {
         // Отправляем данные на сервер
         const response = await axios.post(`${apiUrl}/api/user/check_user/${tg_id}`);

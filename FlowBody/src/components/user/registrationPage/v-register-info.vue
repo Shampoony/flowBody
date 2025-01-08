@@ -57,7 +57,7 @@
   const saveData = async  () => {
     if (tg && tg.initDataUnsafe.user) {
        await getToken(tg.initDataUnsafe.user.id)
-       await updateUser(JSON.stringify({'gender':gender.value, 'country':country.value}))
+      /*  await updateUser(JSON.stringify({'gender':gender.value, 'country':country.value})) */
 
     }
    
