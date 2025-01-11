@@ -19,7 +19,7 @@
                    
                 </slot>
                 <!-- <div class="v-user__steps" v-if="step">
-                    <router-link :to="{name: 'registration-step-1'}" class="v-user__step" :class="{active : step == 1}">
+                    <router-link :to="{name: 'registration'}" class="v-user__step" :class="{active : step == 1}">
                     </router-link>
                     <router-link :to="{name: 'registration-step-2'}" class="v-user__step" :class="{active : step == 2}">
                     </router-link>

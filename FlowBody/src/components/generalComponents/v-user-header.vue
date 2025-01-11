@@ -6,7 +6,7 @@
         </router-link>
         </div>
         <div class="v-user-header__title" :class="{active : type === 'register'}">
-            <router-link :to="{name: 'registration-step-1'}">
+            <router-link :to="{name: 'registration'}">
                 Регистрация
             </router-link>
         </div>

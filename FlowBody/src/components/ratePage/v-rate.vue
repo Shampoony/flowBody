@@ -5,7 +5,7 @@
               <div class="v-rate__info info">
                   <h1 class="v-rate__title title">Тарифы</h1>
                   <p class="v-rate__subtitle subtitle">Выберите свой тариф</p>
-                  <router-link :to="{name: 'registration-step-1'}">Ссылка на первый шаг</router-link>
+                  <router-link :to="{name: 'registration'}">Ссылка на первый шаг</router-link>
               </div>
               <div class="v-rate__content">
                   <ul class="v-rate__list">

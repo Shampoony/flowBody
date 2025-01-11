@@ -595,3 +595,27 @@ video {
 .mb-4 {
   margin-bottom: 1rem;
 }
+
+.flex {
+  display: flex;
+}
+
+.table {
+  display: table;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}

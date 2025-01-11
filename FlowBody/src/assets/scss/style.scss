@@ -13,7 +13,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+ 
 h1,
 h2,
 h3,
@@ -219,4 +219,216 @@ footer {
         margin: 20px auto 0;
     }
 
+}
+
+.v-right-admin {
+    background-color: #0F0F0F;
+    padding: 40px 10px;
+    height: 100vh;
+    width: 255px;
+    flex-shrink: 0;
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: .25);
+        padding-bottom: 18px;
+        margin-bottom: 10px;
+    }
+    &__title {
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+   
+}
+.model {
+    &__title {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+        color: #EBEBEB;
+        margin-bottom: 10px;
+    }
+    &__categories {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__categories-item a{
+        color: #D9D9D9;
+    }
+}
+
+.v-admin {
+  
+    &__panel-title {
+
+        margin-bottom: 48px;
+   }
+    &__panel-list {
+        display: grid;
+        gap: 33px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.admin-app {
+    background-color: #434343BF;
+    padding: 18px 10px;
+
+    border-radius: 12px;
+    &__title {
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+
+        border-bottom: 1px solid #fff;
+    }
+    &__models {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        padding-left: 17px  ;
+    }
+    &__model {
+      border-bottom: 1px solid #494949;
+    }
+}
+.v-admin-category {
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: 160px;
+        padding: 8px 0;
+        
+        font-size: 12px;
+        border-radius: 20px;
+        background-color: var(--red);
+    }
+    
+    &__row a{
+        color: rgb(255, 140, 140);
+    }
+}
+.v-admin-category__fields {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #434343BF;
+    font-size: 14px;
+
+    th,
+    td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid #FFFFFF40;
+    }
+
+    th {
+        font-weight: 700;
+        color: #FFFFFFCC;
+        background-color: #333333;
+    }
+
+    tbody {
+        tr {
+            &:hover {
+                background-color: #313030;
+            }
+        }
+    }
+
+
+    .id-cell {
+        display: flex;
+        align-items: center;
+        gap: 8px; // Расстояние между чекбоксом и числом
+
+        input[type="checkbox"] {
+            margin: 0; // Убираем лишние отступы
+        }
+
+        span {
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+.v-admin-field {
+    &__container {
+        gap: 20px;
+    }
+    &__content {
+        padding-right: 20px;
+    }
+    &__title {
+        margin-bottom: 45px;
+    }
+    &__block {
+        background-color: #434343BF;
+        padding: 25px;
+        width: 70%;
+        border-radius: 12px;
+        @media(max-width:1024px) {
+            width: 100%;
+        }
+    }
+    &__buttons {
+        width: 30%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @media(max-width:1024px) {
+            width: 100%;
+        }
+    }
+    &__button {
+        width: 100%;
+        padding: 15px 5px;
+        
+        border-radius: 20px;
+        background-color: var(--red);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__button.save {
+        background-color: #5FC500;
+    }
+
+    &__handler {
+        @media(max-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.admin-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+    &__title {
+        white-space: nowrap;
+    }
+    &__input {
+        max-width: 275px;
+        padding: 5px 20px;
+        
+        border: 1px solid #fff;
+        border-radius: 20px;
+
+        background-color: transparent;
+    }
 }

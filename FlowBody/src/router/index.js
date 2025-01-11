@@ -9,11 +9,15 @@ const vLogin = ()=>  import('@/components/user/loginPage/v-login.vue')
 
 const VNotFound = ()=> import('@/components/generalComponents/v-not-found.vue')
 
+const vAdmin = ()=> import( '@/components/adminPage/v-admin.vue')
+
+const VAdminCategory = () =>  import('@/components/adminPage/v-admin-category.vue')
+import VAdminFeild from '@/components/adminPage/v-admin-feild.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 const userRoutes = [
     {
         path: 'registration',
-        name: 'registration-step-1',
+        name: 'registration',
         component: VRegisterInfo
     },
     {
@@ -22,6 +26,24 @@ const userRoutes = [
         component: vLogin
     },
    
+]
+
+const adminRoutes = [
+    {
+        path: '',
+        name: 'admin',
+        component: vAdmin
+    },
+    {
+        path: ':name?',
+        name: 'admin-category',
+        component: VAdminCategory
+    },
+    {
+        path: ':name?/field/field_id:?',
+        name: 'admin-field',
+        component: VAdminFeild
+    },
 ]
 
 const routes = [
@@ -39,7 +61,12 @@ const routes = [
         path: '/:pathMatch(.*)*',
         component: VNotFound
 
-    }
+    },
+    { 
+        path: '/admin',
+       children: adminRoutes
+
+    },
 
 ]
 const router = createRouter({
